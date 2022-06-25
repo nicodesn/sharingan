@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --point: 35px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    background: #171717;
+}
+section#eyes-main{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 390px;
+}
+div.eyes-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border: 1px solid #171717;
+    border-radius: 50%;
+    z-index: 5;
+}
+div.eyes-center:nth-child(2){
+    width: 30px;
+    height: 30px;
+    background: #171717;
+    box-shadow: 0 0 15px 10px #000;
+}
+div.eyes{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 50%;
+    border: 4px solid #000;
+    box-shadow: 0 0 100px 10px #000 inset;
+    background: #ff0000;
+    animation: rotateSharingan 2.8s infinite;
+}
+div.point{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #171717;
+}
+div.point:nth-child(1){
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+div.point:nth-child(2){
+    position: absolute;
+    top: 60%;
+    left: 18%;
+    transform: translate(-50%, -50%) rotate(-120deg);
+}
+div.point:nth-child(3){
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%) rotate(12deg);
+}
+div.point::before{
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: 11.1%;
+    width: calc(var(--point) * 1.51);
+    height: calc(var(--point) * 1.69);
+    border-radius: 50%;
+    border-top:  calc(var(--point) / 2.6) solid #171717;
+    border-left: calc(var(--point) / 9.7) solid transparent;
+    transform: rotate(-35deg);
+}
+
+@keyframes rotateSharingan {
+    
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.cla-name{
+    text-align: center;
+    font-size: 40px;
+    line-height: 100px;
+    color: #d8d8d8;
+    width: 600px;
+    height: 100px;
+}
+.cla-name span{
+    filter: drop-shadow(0 0 7px #ff0000);
+}
